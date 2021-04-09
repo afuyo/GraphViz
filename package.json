@@ -1,0 +1,14 @@
+{
+  "main": "index.js",
+  "name": "root",
+  "scripts": {
+    "bootstrap": "lerna bootstrap"
+  },
+  "dependencies": {
+    "@antv/g6": "^4.2.5",
+    "@antv/util": "^2.0.13",
+    "browserify": "^17.0.0",
+    "insert-css": "^2.0.0",
+    "lerna": "^4.0.0"
+  }
+}
