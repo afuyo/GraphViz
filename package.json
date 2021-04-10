@@ -8,6 +8,7 @@
     "@antv/g6": "^4.2.5",
     "@antv/util": "^2.0.13",
     "browserify": "^17.0.0",
+    "http-server": "^0.12.3",
     "insert-css": "^2.0.0",
     "lerna": "^4.0.0"
   }

@@ -1436,7 +1436,7 @@ const bindListener = (graph) => {
   });
 };
 
-fetch('http://127.0.0.1:8080/relations.json')
+fetch('http://127.0.0.1:8080/relations2.json')
   .then((res) => res.json())
   .then((data) => {
     const container = document.getElementById('container');

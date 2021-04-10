@@ -1,0 +1,43 @@
+{
+    "nodes": [
+        {
+            "id": "NodeA"
+        },
+        {
+            "id": "NodeB"
+        },
+        {
+            "id": "NodeC"
+        },
+        {
+            "id": "NodeD"
+        },
+        {
+            "id": "NodeE"
+        }
+    ],
+    "edges": [
+        {
+            "source": "NodeA",
+            "target": "NodeB",
+            "value": 1
+        },
+        {
+            "source": "NodeA",
+            "target": "NodeC",
+            "value": 1
+        },
+        {
+            "source": "NodeA",
+            "target": "NodeE",
+            "value": 1
+        },
+        {
+            "source": "NodeA",
+            "target": "NodeC",
+            "value": 1
+        }
+       
+        
+    ]
+}
