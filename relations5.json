@@ -1,0 +1,155 @@
+{
+    "nodes":
+    [
+        {
+            "id": "Building"
+        },
+        {
+            "id": "BuildingEntity"
+        },
+        {
+            "id": "TxPropertyAssesmentResult"
+        },
+        {
+            "id": "PhysicalObjectRoleOnPlace"
+        },
+        {
+            "id": "PartyRoleOnPhysicalObject"
+        },
+        {
+            "id": "PhysicalObjectGroup"
+        },
+        {
+            "id": "Party"
+        },
+        {
+            "id": "PartyName"
+        },
+        {
+            "id": "ContactMethod"
+        },
+        {
+            "id": "PostCode"
+        },
+        {
+            "id": "PostalAddress"
+        },
+        {
+            "id": "Country"
+        },
+        {
+            "id": "TxPorperty"
+        },
+        {
+            "id": "PlaceProximity"
+        },
+        {
+            "id": "GlobalPositionAddress"
+        }
+    ],
+    "edges":
+    [
+        {
+            "source": "Building",
+            "target": "BuildingEntity",
+            "value": 9
+        },
+        {
+            "source": "Building",
+            "target":  "TxPropertyAssesmentResult",
+            "value": 9
+        },
+        {
+            "source": "Building",
+            "target": "PhysicalObjectRoleOnPlace",
+            "value": 9
+        }, 
+        {
+            "source": "Building",
+            "target": "PartyRoleOnPhysicalObject",
+            "value": 9
+        },
+        {
+            "source": "Building",
+            "target": "PhysicalObjectGroup",
+            "value": 9
+        },
+        {
+            "source": "BuildingEntity",
+            "target": "PhysicalObjectGroup",
+            "value": 9
+        },
+        {
+            "source": "PartyRoleOnPhysicalObject",
+            "target": "PhysicalObjectGroup",
+            "value": 9
+        },
+        {
+            "source": "Party",
+            "target": "PartyName",
+            "value": 9
+        },
+        {
+            "source": "Party",
+            "target": "ContactMethod",
+            "value": 9
+        },
+        {
+            "source": "PartyName",
+            "target": "ContactMethod",
+            "value": 9
+        },
+        {
+            "source": "Party",
+            "target": "PartyRoleOnPhysicalObject",
+            "value": 9
+        },
+        {
+            "source": "Country",
+            "target": "PhysicalObjectRoleOnPlace",
+            "value": 9
+        }, 
+        {
+            "source": "Country",
+            "target": "PostalAddress",
+            "value": 9
+        }, 
+        {
+            "source": "PostCode",
+            "target": "PhysicalObjectRoleOnPlace",
+            "value": 9
+        }, 
+        {
+            "source": "PostCode",
+            "target": "PostalAddress",
+            "value": 9
+        }, 
+        {
+            "source": "PostCode",
+            "target": "PlaceProximity",
+            "value": 9
+        }, 
+        {
+            "source": "TxProperty",
+            "target": "PlaceProximity",
+            "value": 9
+        }, 
+        {
+            "source": "TxProperty",
+            "target": "GlobalPositionAddress",
+            "value": 9
+        }, 
+        {
+            "source": "TxProperty",
+            "target":"PhysicalObjectRoleOnPlace",
+            "value": 9
+        }, 
+        {
+            "source": "PostalAddress",
+            "target":"ContactMethod",
+            "value": 9
+        }
+
+
+    ]
+}
