@@ -1,0 +1,72 @@
+{
+    "nodes":
+    [
+        {
+            "id": "Magnon"
+        },
+        {
+            "id": "Mlle.Gillenormand"
+        },
+        {
+            "id": "Mme.Pontmercy"
+        },
+        {
+            "id": "Mlle.Vaubois"
+        },
+        {
+            "id": "BaronessT"
+        },   
+        {
+            "id": "Gillenormand"
+        },
+        {
+            "id": "Lt.Gillenormand"
+        },
+        {
+            "id": "PontmercyXX"
+        }
+    ],
+    "edges":
+    [
+        {
+            "source": "Mlle.Gillenormand",
+            "target": "Gillenormand",
+            "value": 9
+        },
+        {
+            "source": "Mme.Pontmercy",
+            "target": "Mlle.Gillenormand",
+            "value": 1
+        },
+        {
+            "source": "Mlle.Vaubois",
+            "target": "Mlle.Gillenormand",
+            "value": 1
+        },
+        {
+            "source": "Lt.Gillenormand",
+            "target": "Mlle.Gillenormand",
+            "value": 2
+        },
+        {
+            "source": "BaronessT",
+            "target": "Gillenormand",
+            "value": 1
+        },
+        {
+            "source": "Magnon",
+            "target": "Gillenormand",
+            "value": 1
+        },
+        {
+            "source": "Lt.Gillenormand",
+            "target": "Gillenormand",
+            "value": 1
+        },
+        {
+            "source": "Mme.Pontmercy",
+            "target": "PontmercyXX",
+            "value": 1
+        }
+    ]
+}
