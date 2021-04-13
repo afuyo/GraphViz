@@ -1,0 +1,135 @@
+{
+    "nodes":
+    [
+        {
+            "id": "Building"
+        },
+        {
+            "id": "BuildingEntity"
+        },
+        {
+            "id": "TxPropertyAssesmentResult"
+        },
+        {
+            "id": "PhysicalObjectRoleOnPlace"
+        },
+        {
+            "id": "PartyRoleOnPhysicalObject"
+        },
+        {
+            "id": "PhysicalObjectGroup"
+        },
+        {
+            "id": "Party"
+        },
+        {
+            "id": "PartyName"
+        },
+        {
+            "id": "ContactMethod"
+        },
+        {
+            "id": "PostCode"
+        },
+        {
+            "id": "PostalAddress"
+        },
+        {
+            "id": "Country"
+        },
+        {
+            "id": "TxProperty"
+        },
+        {
+            "id": "PlaceProximity"
+        },
+        {
+            "id": "GlobalPositionAddress"
+        }
+    ],
+    "edges":
+    [
+        {
+            "source": "Building",
+            "target": "BuildingEntity"
+        },
+        {
+            "source": "Building",
+            "target":  "TxPropertyAssesmentResult"
+        },
+        {
+            "source": "Building",
+            "target": "PhysicalObjectRoleOnPlace"
+        }, 
+        {
+            "source": "Building",
+            "target": "PartyRoleOnPhysicalObject"
+        },
+        {
+            "source": "Building",
+            "target": "PhysicalObjectGroup"
+        },
+        {
+            "source": "BuildingEntity",
+            "target": "PhysicalObjectGroup"
+        },
+        {
+            "source": "PartyRoleOnPhysicalObject",
+            "target": "PhysicalObjectGroup"
+        },
+        {
+            "source": "Party",
+            "target": "PartyName"
+        },
+        {
+            "source": "Party",
+            "target": "ContactMethod"
+        },
+        {
+            "source": "PartyName",
+            "target": "ContactMethod"
+        },
+        {
+            "source": "Party",
+            "target": "PartyRoleOnPhysicalObject"
+        },
+        {
+            "source": "Country",
+            "target": "PhysicalObjectRoleOnPlace"
+        }, 
+        {
+            "source": "Country",
+            "target": "PostalAddress"
+        }, 
+        {
+            "source": "PostCode",
+            "target": "PhysicalObjectRoleOnPlace"
+        }, 
+        {
+            "source": "PostCode",
+            "target": "PostalAddress"
+        }, 
+        {
+            "source": "PostCode",
+            "target": "PlaceProximity"
+        }, 
+        {
+            "source": "TxProperty",
+            "target": "PlaceProximity"
+        }, 
+        {
+            "source": "TxProperty",
+            "target": "GlobalPositionAddress"
+        }, 
+        {
+            "source": "TxProperty",
+            "target":"PhysicalObjectRoleOnPlace"
+        }, 
+        {
+            "source": "PostalAddress",
+            "target":"ContactMethod"
+        }
+
+
+    ]
+}
