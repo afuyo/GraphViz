@@ -1435,8 +1435,11 @@ const bindListener = (graph) => {
     console.log(graph.getGroup(), graph.getGroup().getBBox(), graph.getGroup().getCanvasBBox());
   });
 };
+fetch('http://127.0.0.1:8080/relations5x.json')
+.then((res) => res.json())
+.then((data)=> console.log(data));
 
-fetch('http://127.0.0.1:8080/relations5.json')
+fetch('http://127.0.0.1:8080/relations5x.json')
   .then((res) => res.json())
   .then((data) => {
     const container = document.getElementById('container');
@@ -1457,7 +1460,10 @@ fetch('http://127.0.0.1:8080/relations5.json')
     CANVAS_HEIGHT = (container.scrollHeight || 500) - 30;
 
     nodeMap = {};
+    console.log(data);
+    const data2=data;
     const clusteredData = louvain(data, false, 'weight');
+    console.log(clusteredData);
     const aggregatedData = { nodes: [], edges: [] };
     clusteredData.clusters.forEach((cluster, i) => {
       cluster.nodes.forEach((node) => {

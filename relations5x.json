@@ -45,6 +45,31 @@
         },
         {
             "id": "GlobalPositionAddress"
+        },
+        {
+            "id": "FinancialServiceRequest"
+        },
+        {
+            "id": "ActivityStatus"
+        },
+        {
+            "id": "InsuranceAgreement"
+        },
+        {
+            "id": "InsuranceAgreementStatus"
+        },
+        {
+            "id": "PartyRoleInAgreement"
+        },
+        {
+            "id": "RiskAssesment"
+        },
+        {
+            "id": "PartyRoleInActivity"
+        } , 
+         
+        {
+            "id": "RiskEstimate"
         }
     ],
     "edges":
@@ -90,6 +115,14 @@
             "target": "ContactMethod"
         },
         {
+            "source": "PartyName",
+            "target":  "PartyRoleInAgreement"
+        },
+        {
+            "source": "Party",
+            "target": "PartyRoleInAgreement"
+        },
+        {
             "source": "Party",
             "target": "PartyRoleOnPhysicalObject"
         },
@@ -128,7 +161,54 @@
         {
             "source": "PostalAddress",
             "target":"ContactMethod"
+        },
+        {
+            "source":"FinancialServiceRequest",
+            "target":"FinancialServiceRequest"
+        },
+        {
+            "source":"FinancialServiceRequest",
+            "target": "ActivityStatus"
+        },  
+        {
+            "source": "InsuranceAgreement",
+            "target": "FinancialServiceRequest"
+        },
+        {
+            "source":"InsuranceAgreement",
+            "target":"InsuranceAgreement"
+        },
+        {
+            "source":"InsuranceAgreement",
+            "target":"InsuranceAgreementStatus"
+        },
+        {
+            "source": "InsuranceAgreement",
+            "target":  "PartyRoleInAgreement"
+        },
+        {
+            "source":"RiskAssesment",
+            "target": "ActivityStatus"
+        },
+        {
+            "source":"RiskAssesment",
+            "target": "ActivityStatus"
+        },
+        {
+            "source":"RiskAssesment",
+            "target": "PartyRoleInActivity"
         }
+        ,
+        {
+            "source":"Party",
+            "target": "PartyRoleInActivity"
+        }
+        ,
+        {
+            "source":"RiskAssesment",
+            "target":"RiskEstimate"
+        }
+
 
 
     ]
