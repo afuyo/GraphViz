@@ -1463,6 +1463,7 @@ fetch('http://127.0.0.1:8080/relations5x.json')
     console.log(data);
     const data2=data;
     const clusteredData = louvain(data, false, 'weight');
+    console.log("clustered data");
     console.log(clusteredData);
     const aggregatedData = { nodes: [], edges: [] };
     clusteredData.clusters.forEach((cluster, i) => {
