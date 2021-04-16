@@ -1086,12 +1086,17 @@ const getMixedGraph = (
     }
   });
   originData.edges.forEach((edge) => {
+      console.log("edge");
+      console.log(nodeMap[edge.source].clusterId);
+      console.log(nodeMap[edge.target].clusterId);
     const isSourceInExpandArray = expandMap[nodeMap[edge.source].clusterId];
     const isTargetInExpandArray = expandMap[nodeMap[edge.target].clusterId];
     if (isSourceInExpandArray && isTargetInExpandArray) {
       edges.push(edge);
     } else if (isSourceInExpandArray) {
       const targetClusterId = nodeMap[edge.target].clusterId;
+      console.log("targetClusterId");
+      console.log(nodeMap[edge.target].clusterId);
       const vedge = {
         source: edge.source,
         target: targetClusterId,
@@ -1140,7 +1145,9 @@ const getNeighborMixedGraph = (
     nodeMap[node.id] = node;
   });
   // update the clusteredData
+  console.log("clusterId");
   const clusterId = centerNodeModel.clusterId;
+  console.log(clusterId);
   clusteredData.clusters.forEach((cluster) => {
     if (cluster.id !== clusterId) return;
     cluster.nodes = cluster.nodes.concat(neighborSubGraph.nodes);
@@ -1196,6 +1203,7 @@ const getExtractNodeMixedGraph = (
   currentUnproccessedData,
 ) => {
   const extractNodeId = extractNodeData.id;
+
   // const extractNodeClusterId = extractNodeData.clusterId;
   // push to the current rendering data
   currentUnproccessedData.nodes.push(extractNodeData);
@@ -1436,12 +1444,13 @@ const bindListener = (graph) => {
   });
 };
 fetch('http://127.0.0.1:8080/relations5x.json')
-.then((res) => res.json())
-.then((data)=> console.log(data));
-
+.then(res => res.json())
+.then(dat => console.log(dat));
 fetch('http://127.0.0.1:8080/relations5x.json')
   .then((res) => res.json())
   .then((data) => {
+    console.log("logging data");
+    console.log(data);
     const container = document.getElementById('container');
     const descriptionDiv = document.createElement('div');
     descriptionDiv.innerHTML = `<a href='/en/largegraph' target='_blanck'>Click【HERE】To Full Demo</a>
@@ -1460,11 +1469,19 @@ fetch('http://127.0.0.1:8080/relations5x.json')
     CANVAS_HEIGHT = (container.scrollHeight || 500) - 30;
 
     nodeMap = {};
-    console.log(data);
-    const data2=data;
-    const clusteredData = louvain(data, false, 'weight');
-    console.log(clusteredData);
+   
+    //const clusteredData = louvain(data, false, 'weight');
+    //var clusteredData = louvain(data, false, 'weight');
+   // const clusteredData ;
+    fetch('http://localhost:8080/clusteredData.json')
+    .then(res => res.json())
+    .then(dat2 => { var clusteredData=dat2
+   console.log(clusteredData);
+   console.log("louvain data");
+  // console.log(data);
     const aggregatedData = { nodes: [], edges: [] };
+    console.log("clusteredData");
+    //console.log(clusteredData);
     clusteredData.clusters.forEach((cluster, i) => {
       cluster.nodes.forEach((node) => {
         node.level = 0;
@@ -1502,7 +1519,8 @@ fetch('http://127.0.0.1:8080/relations5x.json')
     });
 
     data.edges.forEach((edge) => {
-      edge.label = `${edge.source}-${edge.target}`;
+     // edge.label = `${edge.source}-${edge.target}`;
+     edge.label = `has`;
       edge.id = `edge-${uniqueId()}`;
     });
 
@@ -1656,7 +1674,7 @@ fetch('http://127.0.0.1:8080/relations5x.json')
       // the types of items that allow the menu show up
       // 在哪些类型的元素上响应
       itemTypes: ['node', 'edge', 'canvas'],
-    });
+    }); //then callback
 
     graph = new G6.Graph({
       container: 'container',
@@ -1710,11 +1728,13 @@ fetch('http://127.0.0.1:8080/relations5x.json')
       edges: processedEdges,
     });
     layout.instance.execute();
-
+     console.log("aggregatedData");
+     console.log(aggregatedData);
     bindListener(graph);
     graph.data({ nodes: aggregatedData.nodes, edges: processedEdges });
     graph.render();
-  });
+  }); //end then(data)
+}); //end mythen(dat2)
 
 if (typeof window !== 'undefined')
   window.onresize = () => {
