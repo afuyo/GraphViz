@@ -70,6 +70,19 @@
          
         {
             "id": "RiskEstimate"
+        } , 
+         
+        {
+            "id": "StreetAddress"
+        },
+        {
+            "id": "InsuredObject"
+        },
+        {
+            "id": "Coverage"
+        },
+        {
+            "id": "RiskExposure"
         }
     ],
     "edges":
@@ -207,7 +220,70 @@
         {
             "source":"RiskAssesment",
             "target":"RiskEstimate"
+        }, 
+         
+        {
+            "source": "StreetAddress",
+            "target": "PostalAddress"
+        },
+        {
+            "source": "PostCode",
+            "target": "StreetAddress"
+        },
+        {
+            "source": "Country",
+            "target":"StreetAddress"
+        },
+        {
+            "source": "Building",
+            "target": "InsuredObject"
+        } ,
+        {
+            "source": "InsuredObject",
+            "target": "Coverage"
+        },
+        {
+            "source": "InsuranceAgreement",
+            "target": "InsuredObject"
+        },   
+         {
+            "source": "PartyRoleInAgreement",
+            "target":  "InsuredObject"
+        },
+        {
+            "source":"FinancialServiceRequest",
+            "target":"PartyRoleInAgreement"
+        },
+        {
+            "source": "Coverage",
+            "target":"PartyRoleInAgreement"
+        },
+        {
+            "source":"RiskExposure",
+            "target":"RiskEstimate"
+        },
+        {
+            "source":"RiskEstimate",
+            "target":"RiskExposure"
+        }, 
+        {
+            "source":"RiskExposure",
+            "target":"InsuredObject"
+        }, 
+        {
+            "source":"InsuredObject",
+            "target":"RiskExposure"
+        }, 
+        {
+            "source":"RiskExposure",
+            "target":"TxProperty"
+        }, 
+        {
+            "source":"TxProperty",
+            "target":"RiskExposure"
         }
+
+
 
 
 
