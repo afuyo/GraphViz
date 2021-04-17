@@ -1453,9 +1453,9 @@ fetch('http://127.0.0.1:8080/relations5x.json')
     console.log(data);
     const container = document.getElementById('container');
     const descriptionDiv = document.createElement('div');
-    descriptionDiv.innerHTML = `<a href='/en/largegraph' target='_blanck'>Click【HERE】To Full Demo</a>
-      <br/>
-      <a href='/zh/largegraph' target='_blanck'>点击【这里】进入完整 Demo</a>`;
+    //descriptionDiv.innerHTML = `<a href='/en/largegraph' target='_blanck'>Click【HERE】To Full Demo</a>
+    //  <br/>
+    //  <a href='/zh/largegraph' target='_blanck'>点击【这里】进入完整 Demo</a>`;
     descriptionDiv.style.textAlign = 'right';
     descriptionDiv.style.color = '#fff';
     descriptionDiv.style.position = 'absolute';
@@ -1493,7 +1493,8 @@ fetch('http://127.0.0.1:8080/relations5x.json')
       const cnode = {
         id: cluster.id,
         type: 'aggregated-node',
-        count: cluster.nodes.length,
+        //count: cluster.nodes.length,
+        count: cluster.id+'('+cluster.nodes.length+')',
         level: 1,
         label: cluster.id,
         colorSet: colorSets[i],

@@ -83,6 +83,9 @@
         },
         {
             "id": "RiskExposure"
+        },
+        {
+            "id": "Peril"
         }
     ],
     "edges":
@@ -281,11 +284,14 @@
         {
             "source":"TxProperty",
             "target":"RiskExposure"
+        }, 
+        {
+            "source":"TxProperty",
+            "target":"StreetAddress"
+        }, 
+        {
+            "source":"Peril",
+            "target":"RiskExposure"
         }
-
-
-
-
-
     ]
 }
